@@ -24,17 +24,18 @@ int main()
     printf("Now enter the first operand: ");
     scanf("%d", &first_operand);
 
-    while (quit != 0)
+    while (quit != 0) {
         calculated_modulo = (first_operand % second_operand); 
-        printf("%d %d is %d", first_operand, second_operand, calculated_modulo);
+        printf("%d %% %d is %d", first_operand, second_operand, calculated_modulo);
 
         printf("\nEnter next number for first operand (<=0 to quit): ");
         scanf("%d", &first_operand);
 
-        if (second_operand == 0)
+        if (first_operand == 0)
         {
             quit = 0;
         }
-            
+    }
+        
     return 0;
 }
