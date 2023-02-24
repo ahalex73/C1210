@@ -10,8 +10,7 @@
 
 int main()
 {
-    int quit;
-    quit = 1;   // Our flag to jump out of the loop
+    int quit = 1;          // Our flag to jump out of the loop
     
     int first_operand;     // The user's desired First operand
     int second_operand;    // The user's desired Second operand
@@ -24,7 +23,7 @@ int main()
     printf("Now enter the first operand: ");
     scanf("%d", &first_operand);
 
-    while (quit != 0) {
+    while (quit != 0) {    // When the user returns 0, the function quits.
         calculated_modulo = (first_operand % second_operand); 
         printf("%d %% %d is %d", first_operand, second_operand, calculated_modulo);
 
