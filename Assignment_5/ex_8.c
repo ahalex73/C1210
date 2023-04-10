@@ -135,3 +135,11 @@ float get_float(void){
     return input;
 
 } 
+
+/*
+Dropbox Feedback
+Overall Feedback
+You can use scanf("%[^\n]s",variable_name); 
+
+This takes the input for a char or string until newline is encountered.
+*/
