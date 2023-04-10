@@ -14,20 +14,37 @@
 char get_choice(void);
 
 struct name{
-    char first[CSIZE];
-    char last[CSIZE];
+    char first;
+    char last;
 };
 
+struct student{
+    struct name student_full_name;
+    float grade;
+    float average;
+
+};
+
+
+
 int main(void){
-    int zero = 0;
+    struct student students_array[CSIZE]; /* array of students*/
+
+    struct student{
+        {{"Jack", "Black"},
+         85.7,
+         0.00
+        }
+    };
+
 
     return 0;
 }
 
-char get_choice(void){
+float get_average(void){
     /* Gets the users choice for the operator */
-    int ch;
+    float student_average = 0;
 
-    return ch;
+    return student_average;
 
 }
