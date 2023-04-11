@@ -25,6 +25,7 @@ struct Student{
 };
 
 float get_average(struct Student student);
+//float get_average_for_class(struct Student student);
 
 int main(void){
 
@@ -93,3 +94,13 @@ float get_average(struct Student student) {
 
     return sum / NUMBER_OF_GRADES;
 }
+
+// float get_average_for_class(struct Student student) {
+//     float sum = 0;
+//     int i;
+//     for (i = 0; i < CSIZE; i++) {
+//         sum += students_array[i].average;
+//     }
+
+//     return sum / CSIZE;
+// }
