@@ -18,7 +18,7 @@ struct Name{
 };
 
 struct Student{
-    struct Name student_full_name;
+    struct Name full_name;
     float grade[NUMBER_OF_GRADES];
     float average;
 
@@ -57,20 +57,29 @@ int main(void){
     float average_grade = 0.0;
     int i;
     for(i=0; i < CSIZE ;i++){
-        printf("Enter grades for %s %s\n", students_array[i].student_full_name.first, students_array[i].student_full_name.last);
+        printf("Enter grades for %s %s\n", students_array[i].full_name.first, students_array[i].full_name.last);
         int j;
         for(j = 0; j < NUMBER_OF_GRADES; j++) {
             printf("Grade %d: ", j+1);
             scanf("%f", &students_array[i].grade[j]);
+            students_array[i].average = get_average(students_array[i]);
         }
-        average_grade = get_average(students_array[i]);
+        
         // printf("Average Grade for this student is: %.2f\n", average_grade);
     }
 
 /*  For printing out array of student structures */
-//     for (i = 0; i < CSIZE; i++) {
-//     printf("%s %s: %.2f\n", students_array[i].student_full_name.first, students_array[i].student_full_name.last, students_array[i].grade);
-// }
+    for (i = 0; i < CSIZE; i++) {
+        printf("--%s %s--\n", students_array[i].full_name.first, students_array[i].full_name.last);
+        int j;
+
+        for(j = 0; j < NUMBER_OF_GRADES; j++){
+            printf("Grade %d: %.2f, " , j + 1, students_array[i].grade[j]);
+    
+        }    
+        printf("\n");
+        printf("Average Grade: %.2f\n\n", students_array[i].average);
+}
     
     return 0;
 }
