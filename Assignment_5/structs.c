@@ -6,7 +6,13 @@
 // 4/10/2023
 // Intro to C Instructor: James Rhodes
 
-// This program is 
+// This program is to demonstrate the use of structures in C. Structures are 
+// fairly similar to classes in other languages such as Python and Javascript
+// however there is slight differences. 
+// This program is taking a Name and Student structure, that will eventually
+// Append student structures to an array.This array is then manipulated to
+// give grades to each student, calculate their averages, and calculate the
+// classes average.
 
 #define CSIZE 4
 #define LEN 20
@@ -25,7 +31,7 @@ struct Student{
 };
 
 float get_average(struct Student student);
-//float get_average_for_class(struct Student student);
+float get_average_for_class(struct Student students_array[CSIZE]);
 
 int main(void){
 
@@ -65,11 +71,9 @@ int main(void){
             scanf("%f", &students_array[i].grade[j]);
             students_array[i].average = get_average(students_array[i]);
         }
-        
-        // printf("Average Grade for this student is: %.2f\n", average_grade);
     }
 
-/*  For printing out array of student structures */
+    /*  For printing out array of student structures */
     for (i = 0; i < CSIZE; i++) {
         printf("--%s %s--\n", students_array[i].full_name.first, students_array[i].full_name.last);
         int j;
@@ -80,8 +84,13 @@ int main(void){
         }    
         printf("\n");
         printf("Average Grade: %.2f\n\n", students_array[i].average);
-}
+    }
     
+    float class_average;
+    class_average = (get_average_for_class(students_array));
+    
+    printf("Class Average: %.2f", class_average);
+
     return 0;
 }
 
@@ -95,12 +104,12 @@ float get_average(struct Student student) {
     return sum / NUMBER_OF_GRADES;
 }
 
-// float get_average_for_class(struct Student student) {
-//     float sum = 0;
-//     int i;
-//     for (i = 0; i < CSIZE; i++) {
-//         sum += students_array[i].average;
-//     }
+float get_average_for_class(struct Student students_array[CSIZE]) {
+    float sum = 0;
+    int i;
+    for (i = 0; i < CSIZE; i++) {
+        sum += students_array[i].average;
+    }
 
-//     return sum / CSIZE;
-// }
+    return sum / CSIZE;
+}
